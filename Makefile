@@ -1,19 +1,6 @@
 
-CC=gcc
-CFLAGS=-c
-WARNFLAGS=-Wall
-LDFLAGS=-lm
-SRCS=q_newton_cotes.c q_test.c 
-OBJS=$(SRCS:.c=.o)
-EXEC=q_test
-
-all : $(SRCS) $(OBJS)
-	$(CC) -o $(EXEC) $(OBJS) $(LDFLAGS)
-
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) $< -o $@ 
-
-
+all : 
+	for f in Makefile.*;do make -f $f;done
 clean: 
 	rm -rf *.o
 	rm -rf *.dat
